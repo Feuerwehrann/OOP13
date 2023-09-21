@@ -31,7 +31,7 @@ public class Ampel implements Runnable{
             switch (aktZustand) {
                 case ROT:
                 System.out.println(name + ": ROT");
-                    warten(wait);
+                warten(wait);
                 aktZustand = ROTGELB;
                     break;
             
