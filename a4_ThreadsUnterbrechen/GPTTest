@@ -2,6 +2,8 @@ public class GPTTest implements Runnable {
     private static final int COUNT_LIMIT = 100;
     private static volatile boolean shouldRun = true;
 
+    private int counter = 1;
+
     public void run () {
         while (shouldRun){
             System.out.println ("Current count: " + getCount())
@@ -17,7 +19,7 @@ public class GPTTest implements Runnable {
     public int getCount(){
         return counter++;
     }
-    public static void main (String[] args)throws InterruptedException {
+    public static void main (String[] args) throws InterruptedException {
         new Thread(()->new Counter ()).start();
 
         Scanner scanner = new Scanner (System.in);
