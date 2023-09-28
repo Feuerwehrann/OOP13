@@ -1,0 +1,28 @@
+public class GPTTest implements Runnable {
+    private static final int COUNT_LIMIT = 100;
+    private static volatile boolean shouldRun = true;
+
+    public void run () {
+        while (shouldRun){
+            System.out.println ("Current count: " + getCount())
+
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                shouldRun = false;
+            }
+        }
+    }
+
+    public int getCount(){
+        return counter++;
+    }
+    public static void main (String[] args)throws InterruptedException {
+        new Thread(()->new Counter ()).start();
+
+        Scanner scanner = new Scanner (System.in);
+        while (scanner.nextLine().tolower().startsWith("q")){
+            shouldRun = false;
+        }
+    }
+}
