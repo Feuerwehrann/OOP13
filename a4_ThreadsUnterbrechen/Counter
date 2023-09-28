@@ -1,4 +1,4 @@
-public class GPTTest implements Runnable {
+public class Counter implements Runnable {
     private static final int COUNT_LIMIT = 100;
     private static volatile boolean shouldRun = true;
 
