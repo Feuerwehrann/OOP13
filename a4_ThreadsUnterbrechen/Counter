@@ -1,4 +1,12 @@
 public class Counter implements Runnable {
+    public static void main (String[] args) throws InterruptedException {
+        new Thread(()->new Counter ()).start();
+
+        Scanner scanner = new Scanner (System.in);
+        while (scanner.nextLine().tolower().startsWith("q")){
+            shouldRun = false;
+        }
+    }
     private static final int COUNT_LIMIT = 100;
     private static volatile boolean shouldRun = true;
 
@@ -19,12 +27,5 @@ public class Counter implements Runnable {
     public int getCount(){
         return counter++;
     }
-    public static void main (String[] args) throws InterruptedException {
-        new Thread(()->new Counter ()).start();
-
-        Scanner scanner = new Scanner (System.in);
-        while (scanner.nextLine().tolower().startsWith("q")){
-            shouldRun = false;
-        }
-    }
+    
 }
