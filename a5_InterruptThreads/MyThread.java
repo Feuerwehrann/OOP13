@@ -1,10 +1,7 @@
 package a5_InterruptThreads;
 
-
-
 public class MyThread implements Runnable {
 
-    
     Thread t;
 
     public MyThread() {
@@ -14,34 +11,22 @@ public class MyThread implements Runnable {
 
     @Override
     public void run() {
-        
-            
-    
+
         System.out.print("Ich arbeite");
         {
-           while(!(t.isInterrupted())){
+            while ((t.isInterrupted())==false) {
                 System.out.print(".");
                 try {
                     Thread.sleep(200);
                 } catch (InterruptedException e) {
                     break;
-                    
-                   
+
                 }
 
-                
-            } 
+            }
 
-                
-            
-        
-                }
+        }
     }
-            
-
-            
-
-        
 
     public void start() {
         t.start();
@@ -51,4 +36,4 @@ public class MyThread implements Runnable {
         t.interrupt();
     }
 
-    }
+}
