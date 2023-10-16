@@ -13,9 +13,15 @@ public class MyThread implements Runnable {
         }
         @Override
         public void run() {
-            System.out.print("Ich arbeite)");
+            System.out.print("Ich arbeite");
             while(true){
                 System.out.print(".");
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+
+                    e.printStackTrace();
+                }
             }
             
             
