@@ -10,7 +10,7 @@ public class mainMethode {
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
-            a.Interrupt();
+          a.interrupt();
             e.printStackTrace();
             
         }
