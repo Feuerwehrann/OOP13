@@ -6,14 +6,16 @@ public class Array {
         for (int i = 0; i<namen.length; i++){
             System.out.println(namen[i]);
         }
+         System.out.println("---");
         namen[0]=null;
         for (int i = 0; i<namen.length; i++){
             System.out.println(namen[i]);
         }
-        
+        System.out.println("---");
+
         for (String strNamen : namen) {
-            if (strNamen == null){
-                System.out.println("Es gibt leere Stellen!");
+            if (strNamen == "Helene"){
+                System.out.println("Helene vorhanden");
 
             }    
         }
