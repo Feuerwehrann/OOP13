@@ -15,7 +15,7 @@ public class Array {
 
         for (String strNamen : namen) {
             if (strNamen == "Helene"){
-                System.out.println("Helene vorhanden");
+                System.out.println("Helene vorhanden! Yayyyy!");
 
             }    
         }
