@@ -36,6 +36,9 @@ public class Baum {
     public int hoehe(){
         int l = 0;
         int r = 0;
+        if (wurzel == null){
+            return 0;
+        }
         if (wurzel.links != null){
             l = hoehe(wurzel.links) + 1;
         }
