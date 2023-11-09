@@ -33,6 +33,30 @@ public class Baum {
 
     }
 
+    public int hoehe(){
+        int l = 0;
+        int r = 0;
+        if (wurzel.links != null){
+            l = hoehe(wurzel.links) + 1;
+        }
+        if (wurzel.rechts != null){
+            r = hoehe(wurzel.links) +1;
+        }
+        return Math.max(l, r)+1;
+        
+    }
+    public int hoehe (Knoten parent){
+        int l = 0;
+        int r = 0;
+        if (parent.links != null){
+            l = hoehe(parent.links)+1;
+        }
+        if (parent.rechts != null){
+            r = hoehe(parent.links)+1;
+        }
+        return Math.max(l, r);
+    }
+
     public int anzahl() {
         if (wurzel == null) {
             return 0;
