@@ -7,7 +7,6 @@ public class Knoten {
         rechts = null;
         this.wert = wert;
 
-
     }
 
     public int wert;
@@ -15,4 +14,3 @@ public class Knoten {
     public Knoten rechts;
 
 }
-

@@ -10,6 +10,9 @@ public class Main {
         meinBaum.insert(2);
         meinBaum.insert(1);
         meinBaum.insert(8);
+        System.out.println("\33[H\033[2J");
+        System.out.flush();
+        System.out.println(meinBaum.anzahl());
     }
-    
+
 }
