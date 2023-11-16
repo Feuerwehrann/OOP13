@@ -1,7 +1,5 @@
 # Fifo in Pseudocode
-
-
-```` Python
+```` Smalltalk
     Klasse Element 
     current: Text
     next: Element 
@@ -13,12 +11,12 @@
 ENDE  Klasse Element
 ````
 
-``` Python
+``` Smalltalk
  Klasse FiFo 
     first: Element
     first <- null
 
-    OPERATION Text pop() der Klasse FiFo
+    OPERATION pop():Text der Klasse FiFo 
         FALLS first = null 
             rückgabe <- null
         ENDE FALLS
@@ -45,7 +43,7 @@ ENDE öffentliche Klasse FiFo
 
 ```
 
-``` Python 
+``` Smalltalk
 Klasse Main 
 
     OPERATION main(args<- NEU Liste <Text>()) der Klasse Main
@@ -66,6 +64,3 @@ ENDE Klasse main
 
 
 ```
-
-
-
