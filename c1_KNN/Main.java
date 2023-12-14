@@ -7,18 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<DataObject> objs = new ArrayList<DataObject>();
-        objs.add(new DataObject(97, 3, 0));
+        objs.add(new DataObject(97, 3, 0)); // Punkt
         objs.add(new DataObject(96, 4, 0));
         objs.add(new DataObject(94, 6, 0));
         objs.add(new DataObject(73, 20, 0));
         objs.add(new DataObject(90, 10, 0));
-        objs.add(new DataObject(91, 3, 1));
+        objs.add(new DataObject(91, 3, 1)); // Dreieck
         objs.add(new DataObject(92, 11, 1));
         objs.add(new DataObject(87, 8, 1));
         objs.add(new DataObject(85, 10, 1));
         objs.add(new DataObject(84, 24, 1));
         objs.add(new DataObject(77, 6, 1));
-        objs.add(new DataObject(86, 25, 2));
+        objs.add(new DataObject(86, 25, 2)); // Kreuz
         objs.add(new DataObject(81, 27, 2));
         objs.add(new DataObject(77, 12, 2));
         objs.add(new DataObject(76, 25, 2));
@@ -61,29 +61,24 @@ public class Main {
             if (objs.get(indices[i]).klasse == 2) {
                 c++;
             }
-           
+
         }
 
+        if (a > b && a > c) {
+            return 0;
+        }
+        if (b > a && b > c) {
+            return 1;
+        }
+        if (c > a && c > b) {
+            return 2;
+        } else {
+            return 99;
+        }
 
-            if (a > b && a > c) {
-                return 0;
-            }
-            if (b > a && b > c) {
-                return 1;
-            }
-           if (c > a && c > b) {
-                return 2;
-            }
-            else{
-                return 99;
-            }
-            
     }
-        
-    
 
     private static double distance(DataObject o, DataObject ref) {
         return Math.sqrt((o.x - ref.x) * (o.x - ref.x)) + ((o.y - ref.y) * o.y - ref.y);
     }
-
 }
