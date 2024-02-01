@@ -1,4 +1,5 @@
-package KMeansGUI;
+package GUIKMeans;
+
 
 import java.awt.EventQueue;
 
@@ -13,13 +14,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
-import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
+import javax.swing.JToggleButton;
 import javax.swing.ButtonGroup;
 
 public class GUI extends JFrame implements MouseListener {
 
+	public boolean dataPointAusgewaehlt;
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDataPanel DataPanel;
@@ -82,30 +85,49 @@ public class GUI extends JFrame implements MouseListener {
 		});
 		
 		JRadioButton btCluster = new JRadioButton("Cluster");
+		buttonGroup.add(btCluster);
 		btCluster.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("datapoibnt");
+				System.out.println("cluster");
+				dataPointAusgewaehlt = false;
 			}
 		});
-		buttonGroup.add(btCluster);
+
 		ButtonPanel.add(btCluster);
 		
 		JRadioButton btDatapoint = new JRadioButton("Datapoint");
+		buttonGroup.add(btDatapoint);
 		btDatapoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("datapoint");
+				dataPointAusgewaehlt = true;
 			}
 		});
-		buttonGroup.add(btDatapoint);
+
 		ButtonPanel.add(btDatapoint);
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Click");
-		DataPanel.addDataPoint(e.getX(), e.getY());
-		revalidate();
-		repaint();
+		if (dataPointAusgewaehlt) {
+			DataPanel.addDataPoint(e.getX(), e.getY(), Color.darkGray);
+		}
+		else {
+			DataPanel.addCluster(e.getX(), e.getY(), randomColor());
+		}
+		
+		
+		
+	}
+
+
+	private Color randomColor() {
+		Random rand = new Random();
+		float r = rand.nextFloat();
+		float g = rand.nextFloat();
+		float b = rand.nextFloat();
+		Color farbe = new Color(r,g,b);
+		return farbe;
 	}
 
 	@Override
