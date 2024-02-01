@@ -1,5 +1,4 @@
-package KMeansGUI;
-
+package GUIKMeans;
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -8,14 +7,14 @@ public class Cluster {
 	int y;
 	Color color;
 	String name;
-	ArrayList <Datapoint> clusterList = new ArrayList <Datapoint> ();
+	ArrayList <Datapoint> DatapointList;
 	
-	public Cluster(int x, int y, Color color, ArrayList<Datapoint> clusterList) {
+	public Cluster(int x, int y, Color color) {
 		super();
 		this.x = x;
 		this.y = y;
 		this.color = color;
-		this.clusterList = clusterList;
+		this.DatapointList = new ArrayList <Datapoint>();
 	}
 	public int getX() {
 		return x;
@@ -35,13 +34,12 @@ public class Cluster {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-	public void add (int x, int y) {
-		clusterList.add(new Datapoint (x,y));
+	public void hinzufuegen (int x, int y) {
+		DatapointList.add(new Datapoint (x,y));
 	}
-	public static void add(Datapoint d) {
-		Datapoint d1 = new Datapoint(d.getX(), d.getY());
-		
-	}
+
 	
+
+}
 
 }
