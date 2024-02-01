@@ -1,6 +1,4 @@
-package KMeansGUI;
-
-import java.awt.Color;
+package GUIKMeans;
 
 public class Datapoint {
 	int x;
